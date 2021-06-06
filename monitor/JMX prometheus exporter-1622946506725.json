@@ -17,7 +17,7 @@
   "gnetId": 7727,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1622800482949,
+  "iteration": 1622943429385,
   "links": [],
   "panels": [
     {
@@ -384,7 +384,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 12,
         "x": 0,
         "y": 4
@@ -399,8 +399,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -427,6 +427,12 @@
           "intervalFactor": 1,
           "legendFormat": "Used {{instance}}",
           "refId": "A"
+        },
+        {
+          "expr": " jvm_memory_bytes_committed{area=\"heap\",job=\"$job\",instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "Committed {{instance}}",
+          "refId": "C"
         },
         {
           "expr": " jvm_memory_bytes_max{area=\"heap\",job=\"$job\",instance=~\"$instance\"}",
@@ -493,8 +499,8 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
-        "w": 12,
+        "h": 9,
+        "w": 11,
         "x": 12,
         "y": 4
       },
@@ -508,8 +514,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -593,10 +599,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
         "x": 0,
-        "y": 14
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 2,
@@ -608,8 +614,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -631,16 +637,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"PS Eden Space\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 5,
-          "legendFormat": "Max  {{instance}}",
-          "metric": "jvm_memory_bytes_used",
-          "refId": "B",
-          "step": 5
-        },
-        {
           "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"PS Eden Space\",instance=~\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -658,6 +654,16 @@
           "legendFormat": "Committed  {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "C",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"PS Eden Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "B",
           "step": 5
         }
       ],
@@ -717,10 +723,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
         "x": 8,
-        "y": 14
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 16,
@@ -732,8 +738,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -754,16 +760,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"PS Old Gen\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 5,
-          "legendFormat": "Max  {{instance}}",
-          "metric": "jvm_memory_bytes_used",
-          "refId": "B",
-          "step": 5
-        },
-        {
           "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"PS Old Gen\",instance=~\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -781,6 +777,16 @@
           "legendFormat": "Committed  {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "C",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"PS Old Gen\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "B",
           "step": 5
         }
       ],
@@ -840,10 +846,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
         "x": 16,
-        "y": 14
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 7,
@@ -855,8 +861,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -877,16 +883,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"PS Survivor Space\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 5,
-          "legendFormat": "Max  {{instance}}",
-          "metric": "jvm_memory_bytes_used",
-          "refId": "B",
-          "step": 5
-        },
-        {
           "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"PS Survivor Space\",instance=~\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -904,6 +900,16 @@
           "legendFormat": "Committed  {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "C",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"PS Survivor Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "B",
           "step": 5
         }
       ],
@@ -963,7 +969,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
         "x": 0,
         "y": 22
@@ -978,8 +984,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -1000,16 +1006,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"Metaspace\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 5,
-          "legendFormat": "Max {{instance}}",
-          "metric": "jvm_memory_bytes_used",
-          "refId": "B",
-          "step": 5
-        },
-        {
           "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"Metaspace\",instance=~\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -1027,6 +1023,16 @@
           "legendFormat": "Committed {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "C",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"Metaspace\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "B",
           "step": 5
         }
       ],
@@ -1086,7 +1092,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
         "x": 8,
         "y": 22
@@ -1101,8 +1107,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -1123,16 +1129,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"Compressed Class Space\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 5,
-          "legendFormat": "Max {{instance}}",
-          "metric": "jvm_memory_bytes_used",
-          "refId": "B",
-          "step": 5
-        },
-        {
           "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"Compressed Class Space\",instance=~\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -1150,6 +1146,16 @@
           "legendFormat": "Committed {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "C",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"Compressed Class Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "B",
           "step": 5
         }
       ],
@@ -1209,7 +1215,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
         "x": 16,
         "y": 22
@@ -1224,8 +1230,8 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
+        "sort": null,
+        "sortDesc": null,
         "total": false,
         "values": true
       },
@@ -1246,16 +1252,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"Code Cache\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 5,
-          "legendFormat": "Max {{instance}}",
-          "metric": "jvm_memory_bytes_used",
-          "refId": "B",
-          "step": 5
-        },
-        {
           "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"Code Cache\",instance=~\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -1273,6 +1269,16 @@
           "legendFormat": "Committed {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "C",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"Code Cache\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "B",
           "step": 5
         }
       ],
@@ -1332,10 +1338,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
-        "y": 30
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 3,
@@ -1449,10 +1455,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 12,
-        "y": 30
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1550,10 +1556,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 40
       },
       "hiddenSeries": false,
       "id": 5,
@@ -1651,10 +1657,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 12,
-        "y": 38
+        "y": 40
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1831,5 +1837,5 @@
   "timezone": "",
   "title": "JMX prometheus exporter",
   "uid": "nshAi8pmz",
-  "version": 3
+  "version": 10
 }

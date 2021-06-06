@@ -34,7 +34,8 @@ export SERVER_JVMFLAGS="
 -Dzookeeper.ssl.quorum.keyStore.password=$SSL_PASSWORD 
 -Dzookeeper.ssl.quorum.trustStore.location=/var/ssl/kafka/truststore.jks 
 -Dzookeeper.ssl.quorum.trustStore.password=$SSL_PASSWORD
--Djava.security.auth.login.config=/home/justin/Tools/zookeeper-3.5.8_1/conf/zookeeper_jaas.conf"
+-Djava.security.auth.login.config=/home/justin/Tools/zookeeper-3.5.8_1/conf/zookeeper_jaas.conf
+-javaagent:/home/justin/Tools/jmx-exporter/jmx_prometheus_javaagent-0.15.0.jar=2091:/home/justin/Tools/jmx-exporter/zookeeper.yaml"
 
 # use POSTIX interface, symlink is followed automatically
 ZOOBIN="${BASH_SOURCE-$0}"

@@ -14,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export JMX_PORT="9191"
 export KAFKA_OPTS="-Djava.security.auth.login.config=/home/justin/Tools/kafka_2.13-2.6.0_1/config/kafka_server_jaas.conf"
 export KAFKA_OPTS="$KAFKA_OPTS -javaagent:/home/justin/Tools/jmx-exporter/jmx_prometheus_javaagent-0.15.0.jar=9291:/home/justin/Tools/jmx-exporter/kafka-2_0_0.yml"
 
@@ -30,7 +29,7 @@ if [ "x$KAFKA_LOG4J_OPTS" = "x" ]; then
 fi
 
 if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
-    export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
+    export KAFKA_HEAP_OPTS="-Xmx2G -Xms1G"
 fi
 
 EXTRA_ARGS=${EXTRA_ARGS-'-name kafkaServer -loggc'}

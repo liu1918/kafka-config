@@ -36,4 +36,10 @@ scrape_configs:
       labels:
         group: 'local'
 
-
+  - job_name: zookeeper
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+    - targets: ['localhost:2091','localhost:2092','localhost:2093']
+      labels:
+        group: 'local'
