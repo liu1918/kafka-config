@@ -17,7 +17,7 @@
   "gnetId": 7727,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1622951464676,
+  "iteration": 1622961761153,
   "links": [],
   "panels": [
     {
@@ -684,6 +684,36 @@
           "metric": "jvm_memory_bytes_used",
           "refId": "B",
           "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"G1 Eden Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Used  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "D",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_committed{job=\"$job\", pool=\"G1 Eden Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Committed  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "E",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"G1 Eden Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "F",
+          "step": 5
         }
       ],
       "thresholds": [],
@@ -809,6 +839,36 @@
           "metric": "jvm_memory_bytes_used",
           "refId": "B",
           "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"G1 Old Gen\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Used  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "D",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_committed{job=\"$job\", pool=\"G1 Old Gen\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Committed  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "E",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"G1 Old Gen\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "F",
+          "step": 5
         }
       ],
       "thresholds": [],
@@ -931,6 +991,36 @@
           "legendFormat": "Max  {{instance}}",
           "metric": "jvm_memory_bytes_used",
           "refId": "B",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_used{job=\"$job\", pool=\"G1 Survivor Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Used  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "D",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_committed{job=\"$job\", pool=\"G1 Survivor Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Committed  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "E",
+          "step": 5
+        },
+        {
+          "expr": "jvm_memory_pool_bytes_max{job=\"$job\", pool=\"G1 Survivor Space\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 5,
+          "legendFormat": "Max  {{instance}}",
+          "metric": "jvm_memory_bytes_used",
+          "refId": "F",
           "step": 5
         }
       ],
@@ -1857,6 +1947,6 @@
   },
   "timezone": "",
   "title": "JMX prometheus exporter",
-  "uid": "nshAi8pmz",
-  "version": 12
+  "uid": "hNAaO05OvE",
+  "version": 13
 }
