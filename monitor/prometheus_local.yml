@@ -36,6 +36,14 @@ scrape_configs:
       labels:
         group: 'local'
 
+  - job_name: kafka-connect
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+    - targets: ['localhost:9391','localhost:9392','localhost:9393']
+      labels:
+        group: 'local'
+
   - job_name: zookeeper
     metrics_path: /metrics
     scheme: http
