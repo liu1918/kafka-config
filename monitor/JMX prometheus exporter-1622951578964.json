@@ -17,9 +17,113 @@
   "gnetId": 7727,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1622943429385,
+  "iteration": 1622951464676,
   "links": [],
   "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 19,
+      "interval": null,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(process_cpu_seconds_total{job=\"$job\",instance=~\"$instance\"}[1m])",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Usage",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:162",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:163",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
     {
       "cacheTimeout": null,
       "colorBackground": false,
@@ -45,9 +149,9 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 6,
-        "x": 0,
+        "x": 6,
         "y": 0
       },
       "id": 13,
@@ -87,9 +191,11 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "(sum(jvm_memory_bytes_used{area=\"heap\",job=\"$job\"})*100) / sum(jvm_memory_bytes_max{area=\"heap\",job=\"$job\"})",
+          "expr": "(sum(jvm_memory_bytes_used{area=\"heap\",job=\"$job\",instance=~\"$instance\"})*100) / sum(jvm_memory_bytes_max{area=\"heap\",job=\"$job\",instance=~\"$instance\"})",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -132,9 +238,9 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 6,
-        "x": 6,
+        "x": 12,
         "y": 0
       },
       "id": 15,
@@ -219,9 +325,9 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 6,
-        "x": 12,
+        "x": 18,
         "y": 0
       },
       "id": 14,
@@ -281,95 +387,6 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "datasource": "Prometheus",
-      "decimals": 0,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 18,
-        "y": 0
-      },
-      "id": 19,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": true,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "version",
-      "targets": [
-        {
-          "expr": "jvm_info{}",
-          "format": "table",
-          "instant": true,
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "thresholds": "35,50",
-      "title": "JVM Version",
-      "type": "singlestat",
-      "valueFontSize": "50%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -387,7 +404,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 4
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 8,
@@ -463,6 +480,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:222",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -471,6 +489,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:223",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -500,9 +519,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
-        "w": 11,
+        "w": 12,
         "x": 12,
-        "y": 4
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 18,
@@ -602,7 +621,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 13
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 2,
@@ -687,6 +706,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:274",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -695,6 +715,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:275",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -726,7 +747,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 13
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 16,
@@ -849,7 +870,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 13
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 7,
@@ -972,7 +993,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 22
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 9,
@@ -1095,7 +1116,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 22
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 11,
@@ -1218,7 +1239,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 22
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1341,7 +1362,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 3,
@@ -1458,7 +1479,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1559,7 +1580,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 5,
@@ -1660,7 +1681,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 40
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1837,5 +1858,5 @@
   "timezone": "",
   "title": "JMX prometheus exporter",
   "uid": "nshAi8pmz",
-  "version": 10
+  "version": 12
 }
